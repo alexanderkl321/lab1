@@ -1,0 +1,40 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    //ask for height
+    int height;
+    do
+    {
+        height = get_int("Height? ");
+    }
+    while (height < 1 || height > 8);
+    //create two important variables
+    int numspaces;
+    int numhash;
+
+    for (int count = 1; count <= height; count ++)
+    {
+        //assign variables
+        numspaces = height - count;
+        numhash = count;
+        //left side
+        for (int build = 0; build < numspaces; build ++)
+        {
+            printf(" ");
+        }
+        for (int build = 0; build < numhash; build ++)
+        {
+            printf("#");
+        }
+        //gap
+        printf("  ");
+        //right side
+        for (int build = 0; build < numhash; build ++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
